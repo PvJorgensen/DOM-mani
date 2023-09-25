@@ -8,7 +8,10 @@ Du skal finde elementet med id="yellowFigure" og console logge det.
 */
 
 // din kode her
-
+let = document.getElementById("redFigure");
+console.log(redFigure);
+let = document.getElementById("yellowFigure");
+console.log(yellowFigure);
 
 /* opgave 1.2
 Du skal ændre baggrundsfarve på de to elementer du har fundet i opgave 1.1
@@ -17,15 +20,24 @@ farven på elementerne skal være blå. brug evt. elelement.style.backgroundColo
 
 
 // din kode her
-
-
+    redFigure.style.backgroundColor = "blue";
+    yellowFigure.style.backgroundColor = "blue";
 
 /* opgave 2.1
 Du skal oprette følgende HTML elementer i Elementet med id opgaveTwo.
 - et h2 med teksten: Opgave 2.1 løsning
 - et p med teksten: Jeg har løst opgave 2.1
 */
+let opgaveTwoElement = document.getElementById('opgaveTwo'); 
 
+let = h2Element = document.createElement("h2");
+h2Element.textContent = "Opgave 2.1 løsning";
+
+let pElement = document.createElement("p");
+pElement.textContent = "Jeg har løst opgave 2.1";
+
+opgaveTwoElement.appendChild(h2Element);
+opgaveTwoElement.appendChild(pElement);
 
 // din kode her
 
@@ -36,7 +48,9 @@ Du skal finde alle elementer med klassen purpleFigures og console logge resultat
 */
 
 // din kode her
+let purpleFigures = document.getElementsByClassName("purpleFigures");
 
+console.log(purpleFigures);
 
 /* opgave 3.2
 Du skal finde alle elementer med klassen purpleFigures og bruge array.from() til at konvertere listen
@@ -45,6 +59,12 @@ array.from beskrivelse HER: https://developer.mozilla.org/en-US/docs/Web/JavaScr
 */
 
 // din kode her
+// Find alle elementer med klassen "purpleFigures" og konverter til et array
+purpleFigures = Array.from(document.getElementsByClassName("purpleFigures"));
+
+purpleFigures.map(element => {
+  element.style.backgroundColor = "red";
+});
 
 
 /* opgave 3.3
@@ -54,6 +74,14 @@ myElement.children[0].innerHTML til at ændre 1. child elements inner html.
 
 
 // din kode her
+purpleFigures = Array.from(document.getElementsByClassName("purpleFigures"));
+
+purpleFigures.forEach(element => {
+  let h3Element = element.querySelector("h3");
+  if (h3Element) {
+    h3Element.innerHTML = "RED";
+  }
+});
 
 
 
@@ -71,6 +99,25 @@ const myData = {
 
 
 // din kode her
+let opgaveFourElement = document.getElementById("opgaveFour");
+
+let articleElement = document.createElement("article");
+
+let h1Element = document.createElement("h1");
+h1Element.textContent = myData.name; // Brug navnet fra dataobjektet
+
+let imgElement = document.createElement("img");
+imgElement.src = myData.image; // Brug billedstien fra dataobjektet
+imgElement.alt = myData.name; // Brug navnet som alt-tekst
+
+let secndpElement = document.createElement("p");
+secndpElement.textContent = myData.description; // Brug beskrivelsen fra dataobjektet
+
+articleElement.appendChild(h1Element);
+articleElement.appendChild(imgElement);
+articleElement.appendChild(secndpElement);
+
+opgaveFourElement.appendChild(articleElement);
 
 
 
